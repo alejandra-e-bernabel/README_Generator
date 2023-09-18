@@ -22,11 +22,15 @@ const questions = [
     // Tests
 ];
 
+const fileName = "alejandraExample";
+const data = "hello world";
+
+writeToFile(fileName,data);
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     const fs = require ("fs");
-    fs.writeFile ("sampleREADME.md"), data,(err)=> console.log("information was not received and a file could not be created.");
+    fs.writeFile (fileName + ".md", data,(err)=> err ? console.error(err):console.log("information was received and a file was created."));
 }
 
 // TODO: Create a function to initialize app
