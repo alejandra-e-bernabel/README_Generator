@@ -3,7 +3,7 @@
 
 ## Description
 
-To have fun
+To have fun.
 
 ## Table of Contents
 
@@ -12,21 +12,21 @@ To have fun
 - [Credits](#credits)
 - [License](#license)
 - [Questions](#questions?)
-- [Contributing](#how-to-contribute)
+- [Contributing](#how)
 - [Test](#tests)
 
 ## Installation
 
 The necessary applications to run this program are:
-1) 2) 3)
+1) 2)
 
 ## Usage
 
-1) 2) 3)
+1) 2)
 
 ## Credits 
 
-Alejandra
+alejandra
 
 ## License 
 
@@ -35,14 +35,15 @@ Alejandra
 ## Questions? 
 
 If you have questions or have notived a bug in this code, please reach out:
-Name: Alejandra
-Email: alejandrabernabel@example.org
-GitHub: alejandra@example.org
+Name: Alejandra Bernabel
+Email: alejandra@example.com
+GitHub: alejandra@github.com
 
-## How to Contribute 
+## how-to-contribute 
 
 To contribute, please visit https://choosealicense.com/
 
 ## Tests 
 
-To test this code, follow these steps:1) 2) 3)
+To test this code, follow these steps:
+1) 2)
