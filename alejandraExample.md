@@ -1,5 +1,7 @@
 # Alejandra's Cookie Maker
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)## Description
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Description
 
 To have fun
 
@@ -9,22 +11,38 @@ To have fun
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Questions](#questions?)
+- [Contributing](#how-to-contribute)
+- [Test](#tests)
 
 ## Installation
 
 The necessary applications to run this program are:
-1) Blah 2) Blah
+1) 2) 3)
 
 ## Usage
 
-1) Run program using node.js
+1) 2) 3)
 
 ## Credits 
 
+Alejandra
 
+## License 
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Questions? 
 
-If you have questions or have notived a bug in this code, please reach out to
-Alejandra Bernabel
-alejandra@example.com
+If you have questions or have notived a bug in this code, please reach out:
+Name: Alejandra
+Email: alejandrabernabel@example.org
+GitHub: alejandra@example.org
+
+## How to Contribute 
+
+To contribute, please visit https://choosealicense.com/
+
+## Tests 
+
+To test this code, follow these steps:1) 2) 3)
