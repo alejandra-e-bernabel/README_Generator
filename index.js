@@ -1,3 +1,4 @@
+const fs = require("fs");
 const inquirer = require ('inquirer');
 
 
@@ -26,15 +27,18 @@ const questions = [
 ];
 
 //test stuff
-// const fileName = "alejandraExample";
+const fileName = "alejandraExample";
 // const data = "hello world";
 
 // writeToFile(fileName,data);
 
 //function to write README file
 function writeToFile(fileName, data) {
-    const fs = require("fs");
     fs.writeFile(fileName + ".md", data, (err) => err ? console.error(err) : console.log("information was received and a file was created."));
+}
+
+function appendToFile (fileName, data) {
+    fs.appendFile(fileName + ".md", data, (err) => err ? console.error(err) : console.log("information was received and a file was created."));
 }
 
 // TODO: Create a function to initialize app
@@ -53,63 +57,73 @@ function init() {
                 message: questions[1],
                 name: "description"
             },
-            //usage
-            {
-                type: "name",
-                message: questions[2],
-                name: "usage"
-            },
             //table of contents
             {
-                type: "name",
-                message: questions[3],
+                type: "confirm",
+                message: questions[2],
                 name: "tableOfContents"
-            },
-            //Installation
-            {
-                type: "name",
-                message: questions[4],
-                name: "installation"
-            },
-            //usage
-            {
-                type: "name",
-                message: questions[5],
-                name: "usage"
-            },
-            //credits
-            {
-                type: "name",
-                message: questions[6],
-                name: "credits"
-            },
-            //license
-            {
-                type: "name",
-                message: questions[7],
-                name: "license"
-            },
-            //questionName
-            {
-                type: "name",
-                message: questions[8],
-                name: "questionName"
-            },
-            //questionEmail
-            {
-                type: "name",
-                message: questions[9],
-                name: "questionEmail"
-            },
-            //contributing
-            {
-                type: "name",
-                message: questions[10],
-                name: "contributing"
             }
+            //
+            // {
+            //     type: "name",
+            //     message: questions[3],
+            //     name: "tableOfContents"
+            // },
+            // //Installation
+            // {
+            //     type: "name",
+            //     message: questions[4],
+            //     name: "installation"
+            // },
+            // //usage
+            // {
+            //     type: "name",
+            //     message: questions[5],
+            //     name: "usage"
+            // },
+            // //credits
+            // {
+            //     type: "name",
+            //     message: questions[6],
+            //     name: "credits"
+            // },
+            // //license
+            // {
+            //     type: "name",
+            //     message: questions[7],
+            //     name: "license"
+            // },
+            // //questionName
+            // {
+            //     type: "name",
+            //     message: questions[8],
+            //     name: "questionName"
+            // },
+            // //questionEmail
+            // {
+            //     type: "name",
+            //     message: questions[9],
+            //     name: "questionEmail"
+            // },
+            // //contributing
+            // {
+            //     type: "name",
+            //     message: questions[10],
+            //     name: "contributing"
+            // }
         ])
         .then(data => {
-            console.log("The name of the project is " + data.title);
+            const titleString = "# " + data.title;
+            writeToFile(fileName, titleString + "\n\n");
+            appendToFile(fileName, "## Description\n\n" + data.description + "\n\n");
+
+            if (data.tableOfContents) {
+                appendToFile(fileName, "## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Credits](#credits)\n- [License](#license)");
+            }
+
+
+
+            console.log("The description of the project is " + data.description);
         })
 }
 
