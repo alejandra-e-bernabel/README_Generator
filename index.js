@@ -17,7 +17,7 @@ const questions = [
     //credits
     "List your collaborators, if any, with links to their GitHub profiles.\nIf you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.\nIf you followed tutorials, include links to those here as well.\n",
     //license
-    "What lisence would you like to use (select one)\n",
+    "A license lets other developers know what they can and cannot do with your project.\nIf you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).\n\nWhat lisence would you like to use?\n(select one)\n",
     //questions
     "What is the name of the person users should reach out to with questions?\n",
     "What is the email of the person users should reach out to with questions?\n",
@@ -81,24 +81,27 @@ function init() {
                 message: questions[5],
                 name: "credits"
             },
-            // //credits
-            // {
-            //     type: "name",
-            //     message: questions[6],
-            //     name: "credits"
-            // },
-            // //license
-            // {
-            //     type: "name",
-            //     message: questions[7],
-            //     name: "license"
-            // },
-            // //questionName
-            // {
-            //     type: "name",
-            //     message: questions[8],
-            //     name: "questionName"
-            // },
+            //license
+            //BSD, MIT, GNU GPL, Apache License 2.0, ISC License
+            {
+                type: "list",
+                message: questions[6],
+                choices: ["BDS", "MIT", "GNU GPL", "Apache License 2.0", "ISC License"],
+                name: "license"
+
+            },
+            //questionName
+            {
+                type: "name",
+                message: questions[7],
+                name: "questionName"
+            },
+            //questionEmail
+            {
+                type: "name",
+                message: questions[8],
+                name: "questionEmail"
+            },
             // //questionEmail
             // {
             //     type: "name",
@@ -114,7 +117,7 @@ function init() {
         ])
         .then(data => {
             const titleString = "# " + data.title;
-            writeToFile(fileName, titleString + "\n\n");
+            writeToFile(fileName, titleString + "\n");
 
             const descriptionString = "## Description\n\n" + data.description + "\n\n";
             let tableOfContentsString = "";
@@ -125,9 +128,37 @@ function init() {
 
             const installationString = "\n\n## Installation\n\nThe necessary applications to run this program are:\n" + data.installation + "\n\n";
             const usageString = "## Usage\n\n" + data.usage + "\n\n";
-            const creditsString = "##Credits \n\n" + data.credits + "\n\n";
+            const creditsString = "## Credits \n\n" + data.credits + "\n\n";
 
-            const appendToFileString = descriptionString + tableOfContentsString + installationString + usageString + creditsString;
+            const questionString = "## Questions? \n\nIf you have questions or have notived a bug in this code, please reach out to " + data.questionName + " at " + data.questionEmail;
+
+            let licenseString = "";
+            switch (data.license) {
+                case "BDS":
+                    licenseString = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+                    break;
+                
+                case "MIT":
+                    licenseString = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+                    break;
+
+                case "GNU GPL":
+                    licenseString = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+                    break;
+                    
+                case "Apache License 2.0":
+                    licenseString = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+                    break;
+                
+                case "ISC License":
+                    licenseString = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+                    break;
+
+                default: 
+                licenseString = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            }
+
+            const appendToFileString = licenseString + descriptionString + tableOfContentsString + installationString + usageString + creditsString + questionString;
 
             appendToFile(fileName, appendToFileString);
         })
