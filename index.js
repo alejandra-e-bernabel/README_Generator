@@ -62,25 +62,25 @@ function init() {
                 type: "confirm",
                 message: questions[2],
                 name: "tableOfContents"
-            }
-            //
-            // {
-            //     type: "name",
-            //     message: questions[3],
-            //     name: "tableOfContents"
-            // },
-            // //Installation
-            // {
-            //     type: "name",
-            //     message: questions[4],
-            //     name: "installation"
-            // },
-            // //usage
-            // {
-            //     type: "name",
-            //     message: questions[5],
-            //     name: "usage"
-            // },
+            },
+            //installation
+            {
+                type: "name",
+                message: questions[3],
+                name: "installation"
+            },
+            //usage
+            {
+                type: "name",
+                message: questions[4],
+                name: "usage"
+            },
+            //Credits
+            {
+                type: "name",
+                message: questions[5],
+                name: "credits"
+            },
             // //credits
             // {
             //     type: "name",
@@ -115,15 +115,21 @@ function init() {
         .then(data => {
             const titleString = "# " + data.title;
             writeToFile(fileName, titleString + "\n\n");
-            appendToFile(fileName, "## Description\n\n" + data.description + "\n\n");
+
+            const descriptionString = "## Description\n\n" + data.description + "\n\n";
+            let tableOfContentsString = "";
 
             if (data.tableOfContents) {
-                appendToFile(fileName, "## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Credits](#credits)\n- [License](#license)");
+                tableOfContentsString = "## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Credits](#credits)\n- [License](#license)";
             }
 
+            const installationString = "\n\n## Installation\n\nThe necessary applications to run this program are:\n" + data.installation + "\n\n";
+            const usageString = "## Usage\n\n" + data.usage + "\n\n";
+            const creditsString = "##Credits \n\n" + data.credits + "\n\n";
 
+            const appendToFileString = descriptionString + tableOfContentsString + installationString + usageString + creditsString;
 
-            console.log("The description of the project is " + data.description);
+            appendToFile(fileName, appendToFileString);
         })
 }
 
