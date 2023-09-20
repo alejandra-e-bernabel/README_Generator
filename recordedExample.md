@@ -1,14 +1,9 @@
 # README Generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Application Video Tutorial
-
-https://drive.google.com/file/d/1IGEe5_6R7-COpyGcRDub29w2YSRjEX1o/view
-
 ## Description
 
 A command-line application that dynamically generates a professional README.md file from a user's input. Application uses node.js and inquirer to send queries to user and store responses.
-
 
 ## Table of Contents
 
@@ -17,7 +12,7 @@ A command-line application that dynamically generates a professional README.md f
 - [Credits](#credits)
 - [License](#license)
 - [Questions](#questions?)
-- [Contributing](#how-to-contiribute)
+- [Contributing](#how-to-contribute)
 - [Test](#tests)
 
 ## Installation
@@ -27,13 +22,11 @@ This program requires node.js and the npm inquirer package. Download node at htt
 
 ## Usage
 
-Start the program by typing node index.js into the console. User will be prompted with questions that can be answered by typing responses, or, in the case of the lisence question, scrolling up and down using computer arrows. All infroamtion is saved and a README.md file will be created. If you would like to leave a written response blank, press enter. A default will be chosen if applicable.Once the README file is created, copy and paste it to your project to add its professional README.
 
-![Alt text](<assets/Screenshot 2023-09-20 152152.png>)
 
 ## Credits 
 
-Lisence information: https://choosealicense.com/licenses/mit/, Lisence Badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+
 
 ## License 
 
@@ -43,12 +36,12 @@ Lisence information: https://choosealicense.com/licenses/mit/, Lisence Badges: h
 
 If you have questions or have notived a bug in this code, please reach out:
 Name: Alejandra Bernabel
-Email: alejandra-e-bernabel@gmail.com
-GitHub: https://github.com/alejandra-e-bernabel
+Email: alejandrabernabel@example.com
+GitHub: github@example.com
 
 ## How To Contribute 
 
-To contribute, please visit https://choosealicense.com/
+To contribute, please visit alejandra@example.com
 
 ## Tests 
 

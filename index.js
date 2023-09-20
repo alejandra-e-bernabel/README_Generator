@@ -1,5 +1,5 @@
 //The readme generated will be titled using the following filename: 
-const fileName = "README";
+const fileName = "recordedExample";
 
 const fs = require("fs");
 const inquirer = require ('inquirer');
@@ -17,7 +17,7 @@ const questions = [
     //Usage
     "Provide instructions and examples for use. Include screenshots as needed. To add a screenshot, create an assets/images folder in your repository and import desired images directly to the created README.\n\n",
     //credits
-    "List your collaborators, if any, with links to their GitHub profiles.If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.\n\nIf you followed tutorials, include links to those here as well.\n\m",
+    "List your collaborators, if any, with links to their GitHub profiles.If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.\n\nIf you followed tutorials, include links to those here as well.\n\n",
     //license
     "A license lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).\n\nWhat License would you like to use? (select one)\n\n",
     //questions
@@ -130,7 +130,7 @@ function init() {
             let tableOfContentsString = "";
 
             if (data.tableOfContents) {
-                tableOfContentsString = "## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Credits](#credits)\n- [License](#license)\n- [Questions](#questions?)\n- [Contributing](#how-to-contiribute)\n- [Test](#tests)";
+                tableOfContentsString = "## Table of Contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Credits](#credits)\n- [License](#license)\n- [Questions](#questions?)\n- [Contributing](#how-to-contribute)\n- [Test](#tests)";
             }
 
             const installationString = "\n\n## Installation\n\nThe necessary applications to run this program are:\n" + data.installation + "\n\n";
