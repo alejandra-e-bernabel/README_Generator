@@ -5,6 +5,8 @@
 
 A command-line application that dynamically generates a professional README.md file from a user's input. Application uses node.js and inquirer to send queries to user and store responses.
 
+![Alt text](<assets/Screenshot 2023-09-20 152152.png>)
+
 ## Table of Contents
 
 - [Installation](#installation)
