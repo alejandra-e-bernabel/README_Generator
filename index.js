@@ -1,5 +1,5 @@
 //The readme generated will be titled using the following filename: 
-const fileName = "recordedExample";
+const fileName = "chrisExample";
 
 const fs = require("fs");
 const inquirer = require ('inquirer');
